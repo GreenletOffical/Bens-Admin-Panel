@@ -1,4 +1,12 @@
-```body{
+`    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%) rotate(15deg);
+    opacity: .1;
+    background-image: url('https://ac.blooket.com/dashboard/65a43218fd1cabe52bdf1cda34613e9e.png');
+    background-size: 550px;
+    width: 200%;
+    height: 200%;````body{
     background-color:black;
     color: white;
     margin-left: 500px;
