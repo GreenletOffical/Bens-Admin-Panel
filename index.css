@@ -1,0 +1,27 @@
+```body{
+    background-color:black;
+    color: white;
+    margin-left: 500px;
+    margin-right: 567px
+}
+pre{
+    font-family: "Cabin", serif;
+    font-weight: 700;
+    font-style: normal;
+  }
+  h1{
+font-family: "Roboto", serif;
+font-weight: 600;
+font-style: normal;
+  }
+  h3{
+    font-family: "Roboto", serif;
+    font-weight: 500;
+    font-style: italic;
+  }
+  #og{
+    font-family: "Roboto", serif;
+    font-weight: 450;
+    font-style: italic
+  }
+```
